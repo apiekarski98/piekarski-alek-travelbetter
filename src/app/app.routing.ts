@@ -7,9 +7,10 @@ import {HomeComponent} from './components/home/home.component';
 import {ModuleWithProviders} from '@angular/core';
 import {TestComponent} from './components/test/test.component';
 import {WebsiteListComponent} from './components/website/website-list/website-list.component';
+import {SearchComponent} from "./components/search/search.component";
 
 const APP_ROUTES: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: SearchComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent}
 ];
