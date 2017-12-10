@@ -1,0 +1,42 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand thick">
+        <p>Search</p>
+      </a>
+    </div>
+
+    <div class="navbar-text pull-right">
+      <a class="btn btn-primary btn-block"
+         [routerLink]="['/login']">
+        Login
+      </a>
+      <a class="btn btn-success btn-block"
+         [routerLink]="['/register']">
+        Register
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="container top-margin">
+  <form #f="ngForm">
+    <label>
+      Search for a city
+    </label>
+
+    <input
+      placeholder="Search"
+      [(ngModel)]="search"
+      name="search"
+      type="text"
+      class="form-control"
+      required
+    />
+    <a class="btn btn-primary btn-block"
+       (click)="search()">
+      Search
+    </a>
+  </form>
+</div>
