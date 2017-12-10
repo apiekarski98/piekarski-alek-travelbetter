@@ -58,7 +58,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -82,12 +82,10 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_test_service_client__ = __webpack_require__("../../../../../src/app/services/test.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__todo_todo_component__ = __webpack_require__("../../../../../src/app/todo/todo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__todo_list_todo_list_component__ = __webpack_require__("../../../../../src/app/todo-list/todo-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__todo_list_todo_edit_component__ = __webpack_require__("../../../../../src/app/todo-list/todo-edit.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_todo_service_client__ = __webpack_require__("../../../../../src/app/services/todo.service.client.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__ = __webpack_require__("../../../../../src/app/services/website.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_website_service_client__ = __webpack_require__("../../../../../src/app/services/website.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_search_search_component__ = __webpack_require__("../../../../../src/app/components/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_search_service_client__ = __webpack_require__("../../../../../src/app/services/search.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -95,8 +93,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -122,10 +118,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_4__components_test_test_component__["a" /* TestComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__todo_todo_component__["a" /* TodoComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__todo_list_todo_list_component__["a" /* TodoListComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__todo_list_todo_edit_component__["a" /* TodoEditComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */]
+            __WEBPACK_IMPORTED_MODULE_9__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_search_search_component__["a" /* SearchComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -134,7 +128,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* Routing */]
         ],
         // Client Side services here
-        providers: [__WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */], __WEBPACK_IMPORTED_MODULE_12__services_todo_service_client__["a" /* TodoService */], __WEBPACK_IMPORTED_MODULE_14__services_website_service_client__["a" /* WebsiteService */]],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */],
+            __WEBPACK_IMPORTED_MODULE_10__services_website_service_client__["a" /* WebsiteService */],
+            __WEBPACK_IMPORTED_MODULE_12__services_search_service_client__["a" /* SearchService */]
+        ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -148,11 +146,9 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__ = __webpack_require__("../../../../../src/app/components/test/test.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__todo_todo_component__ = __webpack_require__("../../../../../src/app/todo/todo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__ = __webpack_require__("../../../../../src/app/todo-list/todo-list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_test_test_component__ = __webpack_require__("../../../../../src/app/components/test/test.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__ = __webpack_require__("../../../../../src/app/components/search/search.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
@@ -161,14 +157,11 @@ AppModule = __decorate([
 
 
 
-
-
 var APP_ROUTES = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'todo', component: __WEBPACK_IMPORTED_MODULE_3__todo_todo_component__["a" /* TodoComponent */] },
-    { path: 'todoList', component: __WEBPACK_IMPORTED_MODULE_4__todo_list_todo_list_component__["a" /* TodoListComponent */] },
-    { path: 'test', component: __WEBPACK_IMPORTED_MODULE_2__components_test_test_component__["a" /* TestComponent */] },
-    { path: 'website', component: __WEBPACK_IMPORTED_MODULE_5__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__["a" /* SearchComponent */] },
+    { path: 'search', component: __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__["a" /* SearchComponent */] },
+    { path: 'test', component: __WEBPACK_IMPORTED_MODULE_1__components_test_test_component__["a" /* TestComponent */] },
+    { path: 'website', component: __WEBPACK_IMPORTED_MODULE_2__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] }
 ];
 // Export the routes as module providers
 var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(APP_ROUTES);
@@ -225,7 +218,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
@@ -234,6 +227,77 @@ HomeComponent = __decorate([
 ], HomeComponent);
 
 //# sourceMappingURL=home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <p>Search</p>\n      </a>\n    </div>\n\n    <div class=\"navbar-text pull-right\">\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-primary btn-block\"\n             [routerLink]=\"['/login']\">\n            Login\n          </a>\n        </div>\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-success btn-block\"\n             [routerLink]=\"['/register']\">\n            Register\n          </a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<div class=\"container top-margin\">\n  <form #f=\"ngForm\">\n    <label>\n      Search for a city\n    </label>\n\n    <input\n      placeholder=\"Search\"\n      [(ngModel)]=\"search\"\n      name=\"search\"\n      type=\"text\"\n      class=\"form-control\"\n      required\n    />\n    <a class=\"btn btn-primary btn-block\"\n       (click)=\"search()\">\n      Search\n    </a>\n  </form>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__ = __webpack_require__("../../../../../src/app/services/search.service.client.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var SearchComponent = (function () {
+    function SearchComponent(searchService) {
+        this.searchService = searchService;
+    }
+    SearchComponent.prototype.ngOnInit = function () {
+    };
+    return SearchComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('f'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
+], SearchComponent.prototype, "searchForm", void 0);
+SearchComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+        selector: 'app-search',
+        template: __webpack_require__("../../../../../src/app/components/search/search.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/search/search.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */]) === "function" && _b || Object])
+], SearchComponent);
+
+var _a, _b;
+//# sourceMappingURL=search.component.js.map
 
 /***/ }),
 
@@ -317,7 +381,7 @@ var TestComponent = (function () {
     return TestComponent;
 }());
 TestComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-test',
         template: __webpack_require__("../../../../../src/app/components/test/test.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/test/test.component.css")]
@@ -384,7 +448,7 @@ var WebsiteListComponent = (function () {
     return WebsiteListComponent;
 }());
 WebsiteListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
         selector: 'app-website-list',
         template: __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.css")]
@@ -394,6 +458,51 @@ WebsiteListComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=website-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/search.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SearchService = (function () {
+    function SearchService(http) {
+        this.http = http;
+        this.api = {
+            'searchCities': this.searchCities
+        };
+    }
+    SearchService.prototype.searchCities = function (search) {
+        var url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' + search +
+            '&types=(cities)&key=AIzaSyBfjdSegPe_ofqhmaM5ZtGcfRFmEdo1tJk';
+        return this.http.get(url)
+            .map(function (response) {
+            return response.json();
+        });
+    };
+    return SearchService;
+}());
+SearchService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], SearchService);
+
+var _a;
+//# sourceMappingURL=search.service.client.js.map
 
 /***/ }),
 
@@ -462,75 +571,6 @@ var _a;
 
 /***/ }),
 
-/***/ "../../../../../src/app/services/todo.service.client.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todo_list_todo_mock__ = __webpack_require__("../../../../../src/app/todo-list/todo-mock.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TodoService; });
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var TodoService = (function () {
-    function TodoService(http) {
-        this.http = http;
-        this.todos = __WEBPACK_IMPORTED_MODULE_1__todo_list_todo_mock__["a" /* TODOS */];
-    }
-    // findAllTodos(): Todo[] {
-    TodoService.prototype.findAllTodos = function () {
-        console.log('findAllTodos');
-        return this.http.get('http://localhost:3100/api/todo')
-            .map(function (res) {
-            var data = res.json();
-            return data;
-        });
-        // return this.todos;
-    };
-    TodoService.prototype.createTodo = function (todo) {
-        var todoCopy = __assign({}, todo);
-        this.todos.push(todoCopy);
-        return this.http.post('http://localhost:3100/api/todo', todo)
-            .map(function (res) {
-            return res.json();
-        });
-    };
-    TodoService.prototype.deleteTodo = function (index) {
-        this.todos.splice(index, 1);
-    };
-    return TodoService;
-}());
-TodoService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _a || Object])
-], TodoService);
-
-var _a;
-//# sourceMappingURL=todo.service.client.js.map
-
-/***/ }),
-
 /***/ "../../../../../src/app/services/website.mock.client.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -563,243 +603,6 @@ var WebsiteService = (function () {
 }());
 
 //# sourceMappingURL=website.service.client.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo-edit.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<h2>Edit Todo</h2>\n<label for=\"title\">Title</label>\n<input [(ngModel)]=\"todo.title\"\n       class=\"form-control\"\n       id=\"title\">\n<br/>\n<label for=\"description\">\n  Description</label>\n<textarea [(ngModel)]=\"todo.description\"\n          class=\"form-control\"\n          id=\"description\"></textarea>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo-edit.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todo2__ = __webpack_require__("../../../../../src/app/todo-list/todo2.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TodoEditComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TodoEditComponent = (function () {
-    function TodoEditComponent() {
-    }
-    return TodoEditComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__todo2__["a" /* Todo */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__todo2__["a" /* Todo */]) === "function" && _a || Object)
-], TodoEditComponent.prototype, "todo", void 0);
-TodoEditComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
-        selector: 'app-todo-edit',
-        template: __webpack_require__("../../../../../src/app/todo-list/todo-edit.component.html")
-    })
-], TodoEditComponent);
-
-var _a;
-//# sourceMappingURL=todo-edit.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo-list.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container-fluid\">\n\n  <div class=\"row\">\n    <div class=\"col-xs-5\">\n      <h1>Todo List</h1>\n      <div class=\"input-group\">\n        <input placeholder=\"Todo Title\"\n               [(ngModel)]=\"newTodo.title\"\n               class=\"form-control\">\n        <span class=\"input-group-btn\">\n    <button (click)=\"onAddTodo(newTodo)\"\n            class=\"btn btn-default\">\n       Add\n    </button>\n  </span>\n      </div>\n\n      <ul class=\"list-group\">\n        <li *ngFor=\"let todo of todos; let i = index\"\n            [class.selected]=\"todo === selectedTodo\"\n            class=\"list-group-item\">\n          {{todo.title}}\n          <a class=\"pull-right\"\n             (click)=\"onSelectTodo(todo)\">\n        <span class=\"glyphicon glyphicon-cog\">\n        </span>\n          </a>\n          <a class=\"pull-right\"\n             (click)=\"onDeleteTodo(i)\">\n        <span class=\"glyphicon\n           glyphicon-remove\"></span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <div class=\"col-xs-7\">\n      <app-todo-edit [todo]=\"selectedTodo\"\n                     *ngIf=\"selectedTodo\">\n      </app-todo-edit>\n    </div>\n  </div>\n\n</div>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo-list.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todo2__ = __webpack_require__("../../../../../src/app/todo-list/todo2.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_todo_service_client__ = __webpack_require__("../../../../../src/app/services/todo.service.client.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TodoListComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var TodoListComponent = (function () {
-    function TodoListComponent(todoService) {
-        this.todoService = todoService;
-        this.todos = [];
-        this.newTodo = new __WEBPACK_IMPORTED_MODULE_1__todo2__["a" /* Todo */]();
-    }
-    TodoListComponent.prototype.onSelectTodo = function (todo) {
-        this.selectedTodo = todo;
-    };
-    TodoListComponent.prototype.onAddTodo = function (todo) {
-        var _this = this;
-        this.todoService.createTodo(todo)
-            .subscribe(function (todos) {
-            _this.todos = todos;
-        });
-    };
-    TodoListComponent.prototype.onDeleteTodo = function (index) {
-        this.todoService.deleteTodo(index);
-    };
-    TodoListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        // this.todos = this.todoService.findAllTodos();
-        this.todoService.findAllTodos()
-            .subscribe(function (todos) {
-            _this.todos = todos;
-        });
-    };
-    return TodoListComponent;
-}());
-TodoListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
-        selector: 'app-todo-list',
-        styles: [
-            ".selected {\n     background-color: lightblue;\n   }"
-        ],
-        template: __webpack_require__("../../../../../src/app/todo-list/todo-list.component.html")
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_todo_service_client__["a" /* TodoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_todo_service_client__["a" /* TodoService */]) === "function" && _a || Object])
-], TodoListComponent);
-
-var _a;
-//# sourceMappingURL=todo-list.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo-mock.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TODOS; });
-var TODOS = [
-    { title: 'Pickup milk', description: 'Skim milk' },
-    { title: 'Pickup kids', description: 'From school' },
-    { title: 'Finish homework', description: 'Math' }
-];
-//# sourceMappingURL=todo-mock.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo-list/todo2.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Todo; });
-var Todo = (function () {
-    function Todo() {
-    }
-    return Todo;
-}());
-
-//# sourceMappingURL=todo2.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo/todo.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo/todo.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<input [(ngModel)]=\"title\"/>\n<br/>\n<textarea [(ngModel)]=\"description\"></textarea>\n<br/>\n<button (click)=\"addTodo()\">Add</button>\n\n<ul>\n  <li *ngFor=\"let todo of todos\">\n    {{todo.title}}\n    <span (click)=\"deleteTodo(todo)\">X</span>\n  </li>\n</ul>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo/todo.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todo__ = __webpack_require__("../../../../../src/app/todo/todo.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TodoComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var TodoComponent = (function () {
-    function TodoComponent() {
-        this.todos = [];
-        this.addTodo = function () {
-            var todo = new __WEBPACK_IMPORTED_MODULE_1__todo__["a" /* Todo */](this.title, this.description);
-            this.todos.push(todo);
-        };
-        this.deleteTodo = function (todo) {
-            var index = this.todos.indexOf(todo);
-            this.todos.splice(index, 1);
-        };
-    }
-    TodoComponent.prototype.ngOnInit = function () {
-    };
-    return TodoComponent;
-}());
-TodoComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
-        selector: 'app-todo',
-        template: __webpack_require__("../../../../../src/app/todo/todo.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/todo/todo.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], TodoComponent);
-
-//# sourceMappingURL=todo.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/todo/todo.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Todo; });
-var Todo = (function () {
-    function Todo(title, description) {
-        this.title = title;
-        this.description = description;
-    }
-    return Todo;
-}());
-
-//# sourceMappingURL=todo.js.map
 
 /***/ }),
 

@@ -11,6 +11,7 @@ import {SearchComponent} from "./components/search/search.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component: SearchComponent},
+  {path: 'search', component: SearchComponent},
   {path: 'test', component: TestComponent},
   {path: 'website', component: WebsiteListComponent}
 ];
