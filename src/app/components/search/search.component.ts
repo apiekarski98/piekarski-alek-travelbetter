@@ -10,12 +10,25 @@ import {SearchService} from "../../services/search.service.client";
 export class SearchComponent implements OnInit {
   @ViewChild('f') searchForm: NgForm;
 
-  search: String;
+  searchTerm: String;
+  cities: {};
 
   constructor(private searchService: SearchService) {
   }
 
   ngOnInit() {
+    this.searchTerm = '';
+  }
+
+  search() {
+    if (this.searchForm.value.searchTerm.length > 0) {
+      this.searchTerm = this.searchForm.value.searchTerm;
+    }
+    this.searchService.searchCities(this.searchTerm)
+      .subscribe((cities) => {
+        this.cities = cities;
+        console.log(cities);
+      });
   }
 
 }

@@ -26,22 +26,22 @@
   </div>
 </div>
 <div class="container top-margin">
-  <form #f="ngForm">
-    <label>
-      Search for a city
-    </label>
-
-    <input
-      placeholder="Search"
-      [(ngModel)]="search"
-      name="search"
-      type="text"
-      class="form-control"
-      required
-    />
-    <a class="btn btn-primary btn-block"
-       (click)="search()">
+  <h1>Search for a city</h1>
+  <form (ngSubmit)="search()" #f="ngForm">
+    <input placeholder="Search"
+           name="searchTerm"
+           type="text"
+           class="form-control"
+           ngModel
+           required
+           #searchTerm="ngModel"/>
+    <div class="alert alert-danger" *ngIf="!searchTerm.valid && searchTerm.touched">
+      Please enter a city!
+    </div>
+    <button class="btn btn-primary btn-block"
+            type="submit"
+            [disabled]="!f.valid">
       Search
-    </a>
+    </button>
   </form>
 </div>
