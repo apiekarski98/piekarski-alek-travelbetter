@@ -14,6 +14,7 @@ import { TodoEditComponent } from './todo-list/todo-edit.component';
 import {TodoService} from './services/todo.service.client';
 import { WebsiteListComponent } from './components/website/website-list/website-list.component';
 import {WebsiteService} from './services/website.service.client';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   // Declare components here
@@ -24,7 +25,8 @@ import {WebsiteService} from './services/website.service.client';
     TodoComponent,
     TodoListComponent,
     TodoEditComponent,
-    WebsiteListComponent
+    WebsiteListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
