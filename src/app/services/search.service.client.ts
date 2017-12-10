@@ -14,7 +14,7 @@ export class SearchService {
 
   searchCities(search: String) {
     const url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' + search +
-      '&types=(cities)&key=' + process.env.API_KEY;
+      '&types=(cities)&key=';// + process.env.API_KEY;
     return this.http.get(url)
       .map((response: Response) => {
       return response.json();
