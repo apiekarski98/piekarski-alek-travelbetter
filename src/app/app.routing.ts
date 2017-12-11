@@ -12,7 +12,7 @@ import {UserListComponent} from "./components/user/user-list/user-list/user-list
 const APP_ROUTES: Routes = [
   {path: '', component: SearchComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'user/:userId/search', component: SearchComponent},
+  {path: 'user/:userId/search', component: SearchComponent, canActivate: [AuthGuard]},
   {path: 'search/:countryName', component: SearchDetailsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
