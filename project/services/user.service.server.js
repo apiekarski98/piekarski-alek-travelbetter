@@ -15,6 +15,7 @@ module.exports = function (app) {
   app.post('/api/logout', logout);
   app.put('/api/users/:userId/follow', followUser);
   app.put('/api/user/:userId/wishList', addToWishList);
+  app.get('/api/admin/isAdmin', isAdmin);
 
   var passport = require('passport');
   var LocalStrategy = require('passport-local').Strategy;
@@ -43,6 +44,15 @@ module.exports = function (app) {
   function loggedIn(req, res) {
     res.send(req.isAuthenticated() ? req.user : '0');
   }
+
+  function isAdmin(req, res) {
+    if (req.isAuthenticated() && req.user.isAdmin == true) {
+      res.json(req.user);
+    } else {
+      res.send('0');
+    }
+  }
+
 
   function logout(req, res) {
     req.logOut();
