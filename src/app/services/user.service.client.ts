@@ -152,4 +152,21 @@ export class UserService {
         }
       );
   }
+
+  isAdmin() {
+    const url = environment.baseUrl + '/api/admin/isAdmin';
+    this.options.withCredentials = true;
+    return this.http.get(url, this.options)
+      .map((res: Response) => {
+        const user = res.json();
+        if (user !== 0) {
+          this.sharedService.user = user;
+          return true;
+        } else {
+          this.router.navigate(['/login']);
+          return false;
+        }
+      });
+  }
+
 }
