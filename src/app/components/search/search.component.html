@@ -22,11 +22,11 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
 <div class="container top-margin">
-  <h1>Search for a city</h1>
+  <h1>Search for a country</h1>
   <form (ngSubmit)="search()" #f="ngForm">
     <input placeholder="Search"
            name="searchTerm"
@@ -36,7 +36,7 @@
            required
            #searchTerm="ngModel"/>
     <div class="alert alert-danger" *ngIf="!searchTerm.valid && searchTerm.touched">
-      Please enter a city!
+      Please enter a country!
     </div>
     <button class="btn btn-primary btn-block"
             type="submit"
@@ -44,4 +44,21 @@
       Search
     </button>
   </form>
+</div>
+
+<div class="container top-margin">
+  <ul class="list-group">
+    <li class="list-group-item active">
+      Country Name
+    </li>
+    <div *ngFor="let country of countries">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-xs-9 col-sm-6 col-md-3">
+            <a (click)="select(country.name, country.capital, country.region, country.population)">{{country.name}}</a>
+          </div>
+        </div>
+      </li>
+    </div>
+  </ul>
 </div>
