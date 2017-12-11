@@ -8,16 +8,24 @@
 
     <div class="navbar-text pull-right">
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6" *ngIf="!userLoggedIn">
           <a class="btn btn-primary btn-block"
              [routerLink]="['/login']">
             Login
           </a>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6" *ngIf="!userLoggedIn">
           <a class="btn btn-success btn-block"
              [routerLink]="['/register']">
             Register
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" *ngIf="userLoggedIn">
+          <a class="btn btn-success btn-block"
+             [routerLink]="['/user', userId]">
+            User
           </a>
         </div>
       </div>

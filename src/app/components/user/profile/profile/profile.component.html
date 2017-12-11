@@ -1,18 +1,25 @@
 <div class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header pull-left">
-      <a class="navbar-brand thick">
-        <p>Profile</p>
-      </a>
-    </div>
+    <div class="row">
+      <div class="navbar-header pull-left col-xs-9">
+        <a class="navbar-brand thick">
+          <p>Profile</p>
+        </a>
+      </div>
 
-    <div class="navbar-text pull-right">
-      <a (click)='update()'
-         class="navbar-link">
-        <span class="glyphicon glyphicon-ok"></span>
-      </a>
+      <div class="col-xs-1 buffer">
+        <a class="btn btn-primary btn-block"
+           [routerLink]="['/user', userId, 'search']">
+          Search
+        </a>
+      </div>
+      <div class="col-xs-1 navbar-text pull-right">
+        <a (click)='update()'
+           class="navbar-link">
+          <span class="glyphicon glyphicon-ok"></span>
+        </a>
+      </div>
     </div>
-
   </div>
 </div>
 

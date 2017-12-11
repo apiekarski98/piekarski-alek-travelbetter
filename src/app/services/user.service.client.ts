@@ -4,6 +4,7 @@ import {Http, RequestOptions, Response} from "@angular/http";
 import "rxjs/Rx";
 import {SharedService} from "./shared.service.client";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class UserService {
@@ -26,7 +27,7 @@ export class UserService {
   };
 
   register(username, password) {
-    const url = 'http://localhost:3100/api/register';
+    const url = environment.baseUrl + '/api/register';
     const credentials = {
       username: username,
       password: password
@@ -39,7 +40,7 @@ export class UserService {
   }
 
   login(username, password) {
-    const url = 'http://localhost:3100/api/login';
+    const url = environment.baseUrl + '/api/login';
     const credentials = {
       username: username,
       password: password
@@ -52,7 +53,7 @@ export class UserService {
   }
 
   createUser(user: User) {
-    const url = 'http://localhost:3100/api/user';
+    const url = environment.baseUrl + '/api/user';
     return this.http.post(url, user)
       .map((response: Response) => {
         return response.json();
@@ -60,7 +61,7 @@ export class UserService {
   }
 
   findUsers() {
-    const url = 'http://localhost:3100/api/user';
+    const url = environment.baseUrl + '/api/user';
     return this.http.get(url)
       .map((response: Response) => {
         return response.json();
@@ -68,7 +69,7 @@ export class UserService {
   }
 
   findUserById(userId: String) {
-    const url = 'http://localhost:3100/api/user/' + userId;
+    const url = environment.baseUrl + '/api/user/' + userId;
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
@@ -76,14 +77,14 @@ export class UserService {
   }
 
   findUserByUsername(username: String) {
-    const url = 'http://localhost:3100/api/user?username=' + username;
+    const url = environment.baseUrl + '/api/user?username=' + username;
     return this.http.get(url).map((response: Response) => {
       return response.json();
     });
   }
 
   findUserByCredentials(username: String, password: String) {
-    const url = 'http://localhost:3100/api/user?username=' + username + '&password=' + password;
+    const url = environment.baseUrl + '/api/user?username=' + username + '&password=' + password;
     return this.http.get(url).map(
       (response: Response) => {
         return response.json();
@@ -91,7 +92,7 @@ export class UserService {
   }
 
   updateUser(user: any) {
-    const url = 'http://localhost:3100/api/user/' + user._id;
+    const url = environment.baseUrl + '/api/user/' + user._id;
     return this.http.put(url, user)
       .map(
         (response: Response) => {
@@ -100,7 +101,7 @@ export class UserService {
   }
 
   deleteUser(userId: String) {
-    const url = 'http://localhost:3100/api/user/' + userId;
+    const url = environment.baseUrl + '/api/user/' + userId;
     return this.http.delete(url)
       .map((response: Response) => {
         return response.json();
@@ -108,7 +109,7 @@ export class UserService {
   }
 
   followUser(user: User, userId: String) {
-    const url = 'http://localhost:3100/api/users/' + userId + '/follow';
+    const url = environment.baseUrl + '/api/users/' + userId + '/follow';
     return this.http.put(url, user)
       .map((response: Response) => {
         response.json()
@@ -116,7 +117,7 @@ export class UserService {
   }
 
   logout() {
-    const url = 'http://localhost:3100/api/logout';
+    const url = environment.baseUrl + '/api/logout';
     this.options.withCredentials = true;
     return this.http.post(url, '', this.options)
       .map((response: Response) => {
@@ -126,7 +127,7 @@ export class UserService {
   }
 
   loggedIn() {
-    const url = 'http://localhost:3100/api/loggedIn';
+    const url = environment.baseUrl + '/api/loggedIn';
     this.options.withCredentials = true;
     return this.http.post(url, '', this.options)
       .map(
