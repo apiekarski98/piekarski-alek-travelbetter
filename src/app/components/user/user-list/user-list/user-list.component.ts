@@ -13,6 +13,7 @@ export class UserListComponent implements OnInit {
   users: User[];
   userId: String;
   user: User;
+  adminAccess: boolean;
 
   constructor(private sharedService: SharedService,
               private userService: UserService,
@@ -30,6 +31,9 @@ export class UserListComponent implements OnInit {
 
     this.userService.findUsers().subscribe((users) => {
       this.users = users;
+    });
+    this.userService.isAdmin().subscribe((isAdmin) => {
+      this.adminAccess = isAdmin;
     });
   }
 

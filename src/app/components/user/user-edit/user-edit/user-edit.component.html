@@ -1,0 +1,82 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-header pull-left col-xs-9">
+        <a class="navbar-brand thick">
+          <p>User Edit</p>
+        </a>
+      </div>
+
+      <div class="col-xs-1 navbar-text pull-right">
+        <a (click)='update()'
+           class="navbar-link">
+          <span class="glyphicon glyphicon-ok"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container top-margin">
+
+  <form #f="ngForm">
+    <label>
+      Username
+    </label>
+
+    <input
+      placeholder="Username"
+      [(ngModel)]="username"
+      name="username"
+      type="text"
+      class="form-control"
+      required
+    />
+
+    <label>
+      Email
+    </label>
+    <input
+      placeholder="Email"
+      name="email"
+      type="text"
+      class="form-control"
+      required
+    />
+
+
+    <label>
+      First Name
+    </label>
+    <input
+      placeholder="First Name"
+      [(ngModel)]="firstName"
+      name="firstName"
+      type="text"
+      class="form-control"
+      required
+    />
+
+
+    <label>
+      Last Name
+    </label>
+    <input
+      placeholder="Last Name"
+      [(ngModel)]="lastName"
+      name="lastName"
+      type="text"
+      class="form-control"
+      required
+    />
+  </form>
+
+  <a class="btn btn-danger btn-block"
+     (click)="delete()">
+    Delete
+  </a>
+  <a class="btn btn-primary btn-block"
+     [routerLink]="['/user', userId, 'users']">
+    Users
+  </a>
+</div>

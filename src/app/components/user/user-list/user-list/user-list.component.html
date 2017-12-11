@@ -18,6 +18,22 @@
           </a>
         </p>
       </div>
+
+      <div class="col-xs-10">
+        <p class="navbar-header">
+          <a class="navbar-brand thick">
+            <b>Users</b>
+          </a>
+        </p>
+      </div>
+      <div class="col-xs-1">
+        <p class="navbar-text pull-right">
+          <a [routerLink]="['/admin', 'user', userId, 'users', 'new']"
+             class="navbar-link">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 </nav>
@@ -31,7 +47,9 @@
       <li class="list-group-item">
         <div class="row">
           <div class="col-xs-9">
-            <p>{{user.firstName}}</p>
+            <a [routerLink]="['/admin', 'user', userId, 'users', user._id]">
+              {{user.firstName}}
+            </a>
           </div>
           <div class="col-xs-3">
             <a class="pull-right" (click)="followUser(user._id)">
