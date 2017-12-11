@@ -58,7 +58,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -86,6 +86,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_website_service_client__ = __webpack_require__("../../../../../src/app/services/website.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_search_search_component__ = __webpack_require__("../../../../../src/app/components/search/search.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_search_service_client__ = __webpack_require__("../../../../../src/app/services/search.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_search_search_details_search_details_search_details_component__ = __webpack_require__("../../../../../src/app/components/search/search-details/search-details/search-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,6 +95,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -119,7 +123,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_4__components_test_test_component__["a" /* TestComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_search_search_component__["a" /* SearchComponent */]
+            __WEBPACK_IMPORTED_MODULE_11__components_search_search_component__["a" /* SearchComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_search_search_details_search_details_search_details_component__["a" /* SearchDetailsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -131,7 +136,8 @@ AppModule = __decorate([
         providers: [
             __WEBPACK_IMPORTED_MODULE_8__services_test_service_client__["a" /* TestService */],
             __WEBPACK_IMPORTED_MODULE_10__services_website_service_client__["a" /* WebsiteService */],
-            __WEBPACK_IMPORTED_MODULE_12__services_search_service_client__["a" /* SearchService */]
+            __WEBPACK_IMPORTED_MODULE_12__services_search_service_client__["a" /* SearchService */],
+            __WEBPACK_IMPORTED_MODULE_14__services_shared_service_client__["a" /* SharedService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
     })
@@ -149,6 +155,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_test_test_component__ = __webpack_require__("../../../../../src/app/components/test/test.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_website_website_list_website_list_component__ = __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__ = __webpack_require__("../../../../../src/app/components/search/search.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_search_search_details_search_details_search_details_component__ = __webpack_require__("../../../../../src/app/components/search/search-details/search-details/search-details.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 /**
  * Created by sesha on 7/26/17.
@@ -157,9 +164,11 @@ AppModule = __decorate([
 
 
 
+
 var APP_ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__["a" /* SearchComponent */] },
     { path: 'search', component: __WEBPACK_IMPORTED_MODULE_3__components_search_search_component__["a" /* SearchComponent */] },
+    { path: 'search/:countryName', component: __WEBPACK_IMPORTED_MODULE_4__components_search_search_details_search_details_search_details_component__["a" /* SearchDetailsComponent */] },
     { path: 'test', component: __WEBPACK_IMPORTED_MODULE_1__components_test_test_component__["a" /* TestComponent */] },
     { path: 'website', component: __WEBPACK_IMPORTED_MODULE_2__components_website_website_list_website_list_component__["a" /* WebsiteListComponent */] }
 ];
@@ -218,7 +227,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
@@ -227,6 +236,75 @@ HomeComponent = __decorate([
 ], HomeComponent);
 
 //# sourceMappingURL=home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search-details/search-details/search-details.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".buffer {\n  margin-top: 12.5px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search-details/search-details/search-details.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"row\">\n\n      <!--back arrow-->\n      <div class=\"col-xs-2\">\n        <p class=\"navbar-text pull-left\">\n          <a [routerLink]=\"['/search']\" class=\"navbar-link\">\n            <span class=\"glyphicon glyphicon-chevron-left\"></span>\n          </a>\n        </p>\n      </div>\n\n      <div class=\"col-xs-5\">\n        <p class=\"navbar-header\">\n          <a class=\"navbar-brand thick\">\n            <b>{{name}}</b>\n          </a>\n        </p>\n      </div>\n\n      <!--plus sign-->\n      <div class=\"col-xs-5\">\n\n        <div class=\"row buffer\">\n          <div class=\"col-xs-6\">\n            <a class=\"btn btn-primary btn-block\"\n               [routerLink]=\"['/login']\">\n              Login\n            </a>\n          </div>\n          <div class=\"col-xs-6\">\n            <a class=\"btn btn-success btn-block\"\n               [routerLink]=\"['/register']\">\n              Register\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid top-margin\">\n  <h1>Country: {{name}}</h1>\n  <h2>Capital City: {{capital}}</h2>\n  <h2>Region: {{region}}</h2>\n  <h2>Population: {{population}}</h2>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/search/search-details/search-details/search-details.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchDetailsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SearchDetailsComponent = (function () {
+    function SearchDetailsComponent(sharedService) {
+        this.sharedService = sharedService;
+    }
+    SearchDetailsComponent.prototype.ngOnInit = function () {
+        this.name = this.sharedService.name;
+        this.capital = this.sharedService.capital;
+        this.region = this.sharedService.region;
+        this.population = this.sharedService.population;
+    };
+    return SearchDetailsComponent;
+}());
+SearchDetailsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+        selector: 'app-search-details',
+        template: __webpack_require__("../../../../../src/app/components/search/search-details/search-details/search-details.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/search/search-details/search-details/search-details.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_shared_service_client__["a" /* SharedService */]) === "function" && _a || Object])
+], SearchDetailsComponent);
+
+var _a;
+//# sourceMappingURL=search-details.component.js.map
 
 /***/ }),
 
@@ -251,7 +329,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/search/search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <p>Search</p>\n      </a>\n    </div>\n\n    <div class=\"navbar-text pull-right\">\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-primary btn-block\"\n             [routerLink]=\"['/login']\">\n            Login\n          </a>\n        </div>\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-success btn-block\"\n             [routerLink]=\"['/register']\">\n            Register\n          </a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n<div class=\"container top-margin\">\n  <form #f=\"ngForm\">\n    <label>\n      Search for a city\n    </label>\n\n    <input\n      placeholder=\"Search\"\n      [(ngModel)]=\"search\"\n      name=\"search\"\n      type=\"text\"\n      class=\"form-control\"\n      required\n    />\n    <a class=\"btn btn-primary btn-block\"\n       (click)=\"search()\">\n      Search\n    </a>\n  </form>\n</div>\n"
+module.exports = "<div class=\"navbar navbar-default navbar-fixed-top\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header pull-left\">\n      <a class=\"navbar-brand thick\">\n        <p>Search</p>\n      </a>\n    </div>\n\n    <div class=\"navbar-text pull-right\">\n      <div class=\"row\">\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-primary btn-block\"\n             [routerLink]=\"['/login']\">\n            Login\n          </a>\n        </div>\n        <div class=\"col-xs-6\">\n          <a class=\"btn btn-success btn-block\"\n             [routerLink]=\"['/register']\">\n            Register\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container top-margin\">\n  <h1>Search for a country</h1>\n  <form (ngSubmit)=\"search()\" #f=\"ngForm\">\n    <input placeholder=\"Search\"\n           name=\"searchTerm\"\n           type=\"text\"\n           class=\"form-control\"\n           ngModel\n           required\n           #searchTerm=\"ngModel\"/>\n    <div class=\"alert alert-danger\" *ngIf=\"!searchTerm.valid && searchTerm.touched\">\n      Please enter a country!\n    </div>\n    <button class=\"btn btn-primary btn-block\"\n            type=\"submit\"\n            [disabled]=\"!f.valid\">\n      Search\n    </button>\n  </form>\n</div>\n\n<div class=\"container top-margin\">\n  <ul class=\"list-group\">\n    <li class=\"list-group-item active\">\n      Country Name\n    </li>\n    <div *ngFor=\"let country of countries\">\n      <li class=\"list-group-item\">\n        <div class=\"row\">\n          <div class=\"col-xs-9 col-sm-6 col-md-3\">\n            <a (click)=\"select(country.name, country.capital, country.region, country.population)\">{{country.name}}</a>\n          </div>\n        </div>\n      </li>\n    </div>\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -262,6 +340,8 @@ module.exports = "<div class=\"navbar navbar-default navbar-fixed-top\">\n  <div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__ = __webpack_require__("../../../../../src/app/services/search.service.client.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__ = __webpack_require__("../../../../../src/app/services/shared.service.client.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -275,28 +355,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var SearchComponent = (function () {
-    function SearchComponent(searchService) {
+    function SearchComponent(searchService, router, sharedService) {
         this.searchService = searchService;
+        this.router = router;
+        this.sharedService = sharedService;
     }
     SearchComponent.prototype.ngOnInit = function () {
+        this.searchTerm = '';
+    };
+    SearchComponent.prototype.search = function () {
+        var _this = this;
+        if (this.searchForm.value.searchTerm.length > 0) {
+            this.searchTerm = this.searchForm.value.searchTerm;
+        }
+        this.searchService.searchCountries(this.searchTerm)
+            .subscribe(function (countries) {
+            _this.countries = countries;
+            console.log(countries);
+        });
+    };
+    SearchComponent.prototype.select = function (name, capital, region, population) {
+        this.sharedService.name = name;
+        this.sharedService.capital = capital;
+        this.sharedService.region = region;
+        this.sharedService.population = population;
+        this.router.navigate(['/search', name]);
     };
     return SearchComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('f'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('f'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NgForm */]) === "function" && _a || Object)
 ], SearchComponent.prototype, "searchForm", void 0);
 SearchComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-search',
         template: __webpack_require__("../../../../../src/app/components/search/search.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/search/search.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_search_service_client__["a" /* SearchService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_shared_service_client__["a" /* SharedService */]) === "function" && _d || Object])
 ], SearchComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=search.component.js.map
 
 /***/ }),
@@ -381,7 +484,7 @@ var TestComponent = (function () {
     return TestComponent;
 }());
 TestComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-test',
         template: __webpack_require__("../../../../../src/app/components/test/test.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/test/test.component.css")]
@@ -448,7 +551,7 @@ var WebsiteListComponent = (function () {
     return WebsiteListComponent;
 }());
 WebsiteListComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-website-list',
         template: __webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/website/website-list/website-list.component.css")]
@@ -483,12 +586,11 @@ var SearchService = (function () {
     function SearchService(http) {
         this.http = http;
         this.api = {
-            'searchCities': this.searchCities
+            'searchCountries': this.searchCountries
         };
     }
-    SearchService.prototype.searchCities = function (search) {
-        var url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=' + search +
-            '&types=(cities)&key=AIzaSyBfjdSegPe_ofqhmaM5ZtGcfRFmEdo1tJk';
+    SearchService.prototype.searchCountries = function (searchTerm) {
+        var url = 'https://restcountries.eu/rest/v2/name/' + searchTerm;
         return this.http.get(url)
             .map(function (response) {
             return response.json();
@@ -503,6 +605,32 @@ SearchService = __decorate([
 
 var _a;
 //# sourceMappingURL=search.service.client.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/shared.service.client.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SharedService = (function () {
+    function SharedService() {
+    }
+    return SharedService;
+}());
+SharedService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])()
+], SharedService);
+
+//# sourceMappingURL=shared.service.client.js.map
 
 /***/ }),
 
