@@ -16,7 +16,10 @@ import {RegisterComponent} from './components/user/register/register/register.co
 import {ProfileComponent} from './components/user/profile/profile/profile.component';
 import {UserService} from "./services/user.service.client";
 import {AuthGuard} from "./services/auth-guard.service";
-import { UserListComponent } from './components/user/user-list/user-list/user-list.component';
+import {UserListComponent} from './components/user/user-list/user-list/user-list.component';
+import {AdminService} from "./services/admin.service.client";
+import {UserCreateComponent} from './components/user/user-create/user-create/user-create.component';
+import {UserEditComponent} from './components/user/user-edit/user-edit/user-edit.component';
 
 @NgModule({
   // Declare components here
@@ -29,7 +32,9 @@ import { UserListComponent } from './components/user/user-list/user-list/user-li
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    UserListComponent
+    UserListComponent,
+    UserCreateComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { UserListComponent } from './components/user/user-list/user-list/user-li
     SearchService,
     SharedService,
     UserService,
+    AdminService,
     AuthGuard
   ],
   bootstrap: [AppComponent]
