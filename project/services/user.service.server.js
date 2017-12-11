@@ -13,6 +13,7 @@ module.exports = function (app) {
   app.post('/api/register', register);
   app.post('/api/loggedIn', loggedIn);
   app.post('/api/logout', logout);
+  app.put('/api/users/:userId/follow', followUser);
 
   var passport = require('passport');
   var LocalStrategy = require('passport-local').Strategy;
@@ -21,13 +22,6 @@ module.exports = function (app) {
   passport.deserializeUser(deserializeUser);
 
   app.post('/api/login', passport.authenticate('local'), login);
-
-  var users = [
-    {_id: "123", username: "alice", password: "alice", firstName: "Alice", lastName: "Wonder"},
-    {_id: "234", username: "bob", password: "bob", firstName: "Bob", lastName: "Marley"},
-    {_id: "345", username: "charly", password: "charly", firstName: "Charly", lastName: "Garcia"},
-    {_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose", lastName: "Annunzi"}
-  ];
 
   function register(req, res) {
     var user = req.body;
@@ -104,6 +98,17 @@ module.exports = function (app) {
       });
   }
 
+  function followUser(req, res) {
+    var otherId = req.query["userId"];
+    var currentUser = req.body;
+
+    userModel.followUser(currentUser, otherId)
+      .then(function (user) {
+        res.json(user);
+        return;
+      });
+  }
+
   function findUsers(req, res) {
     var username = req.query["username"];
     var password = req.query["password"];
@@ -120,7 +125,10 @@ module.exports = function (app) {
         });
       return;
     }
-    res.json(users);
+    userModel.findUsers()
+      .then(function (users) {
+        res.json(users);
+      });
   }
 
   function serializeUser(user, done) {

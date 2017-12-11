@@ -74,6 +74,10 @@
      (click)="delete()">
     Delete
   </a>
+  <a class="btn btn-primary btn-block"
+     [routerLink]="['/user', userId, 'users']">
+    Users
+  </a>
   <a class="btn btn-danger btn-block"
      (click)="logout()">
     Logout

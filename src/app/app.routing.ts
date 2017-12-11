@@ -1,13 +1,13 @@
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {TestComponent} from './components/test/test.component';
-import {WebsiteListComponent} from './components/website/website-list/website-list.component';
 import {SearchComponent} from "./components/search/search.component";
 import {SearchDetailsComponent} from "./components/search/search-details/search-details/search-details.component";
 import {LoginComponent} from "./components/user/login/login/login.component";
 import {RegisterComponent} from "./components/user/register/register/register.component";
 import {ProfileComponent} from "./components/user/profile/profile/profile.component";
 import {AuthGuard} from "./services/auth-guard.service";
+import {UserListComponent} from "./components/user/user-list/user-list/user-list.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component: SearchComponent},
@@ -18,8 +18,8 @@ const APP_ROUTES: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'profile/:userId', component: ProfileComponent},
   {path: 'user/:userId', component: ProfileComponent},
-  {path: 'test', component: TestComponent},
-  {path: 'website', component: WebsiteListComponent}
+  {path: 'user/:userId/users', component: UserListComponent},
+  {path: 'test', component: TestComponent}
 ];
 
 // Export the routes as module providers

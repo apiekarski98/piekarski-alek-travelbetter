@@ -31,7 +31,6 @@ export class SearchComponent implements OnInit {
     this.searchService.searchCountries(this.searchTerm)
       .subscribe((countries) => {
         this.countries = countries;
-        console.log(countries);
       });
   }
 

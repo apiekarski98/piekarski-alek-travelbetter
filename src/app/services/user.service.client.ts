@@ -16,11 +16,13 @@ export class UserService {
 
   api = {
     'createUser': this.createUser,
+    'findUsers': this.findUsers,
     'findUserById': this.findUserById,
     'findUserByUsername': this.findUserByUsername,
     'findUserByCredentials': this.findUserByCredentials,
     'updateUser': this.updateUser,
-    'deleteUser': this.deleteUser
+    'deleteUser': this.deleteUser,
+    'followUser': this.followUser
   };
 
   register(username, password) {
@@ -57,6 +59,14 @@ export class UserService {
       });
   }
 
+  findUsers() {
+    const url = 'http://localhost:3100/api/user';
+    return this.http.get(url)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
   findUserById(userId: String) {
     const url = 'http://localhost:3100/api/user/' + userId;
     return this.http.get(url).map((response: Response) => {
@@ -80,7 +90,7 @@ export class UserService {
       });
   }
 
-  updateUser(user: User) {
+  updateUser(user: any) {
     const url = 'http://localhost:3100/api/user/' + user._id;
     return this.http.put(url, user)
       .map(
@@ -94,6 +104,14 @@ export class UserService {
     return this.http.delete(url)
       .map((response: Response) => {
         return response.json();
+      });
+  }
+
+  followUser(user: User, userId: String) {
+    const url = 'http://localhost:3100/api/users/' + userId + '/follow';
+    return this.http.put(url, user)
+      .map((response: Response) => {
+        response.json()
       });
   }
 
