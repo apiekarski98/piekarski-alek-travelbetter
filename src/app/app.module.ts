@@ -12,6 +12,8 @@ import {WebsiteListComponent} from './components/website/website-list/website-li
 import {WebsiteService} from './services/website.service.client';
 import {SearchComponent} from './components/search/search.component';
 import {SearchService} from "./services/search.service.client";
+import {SearchDetailsComponent} from './components/search/search-details/search-details/search-details.component';
+import {SharedService} from "./services/shared.service.client";
 
 @NgModule({
   // Declare components here
@@ -20,7 +22,8 @@ import {SearchService} from "./services/search.service.client";
     HomeComponent,
     TestComponent,
     WebsiteListComponent,
-    SearchComponent
+    SearchComponent,
+    SearchDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import {SearchService} from "./services/search.service.client";
   providers: [
     TestService,
     WebsiteService,
-    SearchService],
+    SearchService,
+    SharedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
