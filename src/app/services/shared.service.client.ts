@@ -6,4 +6,5 @@ export class SharedService {
   capital: String;
   region: String;
   population: Number;
+  user: any;
 }
