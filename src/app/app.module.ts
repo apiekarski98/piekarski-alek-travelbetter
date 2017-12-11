@@ -14,6 +14,9 @@ import {SearchComponent} from './components/search/search.component';
 import {SearchService} from "./services/search.service.client";
 import {SearchDetailsComponent} from './components/search/search-details/search-details/search-details.component';
 import {SharedService} from "./services/shared.service.client";
+import { LoginComponent } from './components/user/login/src/app/components/user/login/login/login.component';
+import { RegisterComponent } from './components/user/register/src/app/components/user/register/register/register.component';
+import { ProfileComponent } from './components/user/profile/src/app/components/user/profile/profile/profile.component';
 
 @NgModule({
   // Declare components here
@@ -23,7 +26,10 @@ import {SharedService} from "./services/shared.service.client";
     TestComponent,
     WebsiteListComponent,
     SearchComponent,
-    SearchDetailsComponent
+    SearchDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
