@@ -42,18 +42,23 @@ export class SearchComponent implements OnInit {
       });
   }
 
-  select(name: String, capital: String, region: String, population: Number) {
-    this.sharedService.name = name;
-    this.sharedService.capital = capital;
-    this.sharedService.region = region;
-    this.sharedService.population = population;
-    this.router.navigate(['/search', name]);
+  select(country) {
+    this.sharedService.name = country.name;
+    this.sharedService.capital = country.capital;
+    this.sharedService.region = country.region;
+    this.sharedService.population = country.population;
+    this.router.navigate(['/search', country.name]);
   }
 
   loggedIn() {
     this.userService.loggedIn().subscribe((loggedIn) => {
       this.userLoggedIn = loggedIn;
     });
+  }
+
+  addToWishList(country) {
+    this.userService.addToWishList(country, this.userId)
+      .subscribe((wishlist) => {});
   }
 
 }

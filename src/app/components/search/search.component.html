@@ -62,8 +62,13 @@
     <div *ngFor="let country of countries">
       <li class="list-group-item">
         <div class="row">
-          <div class="col-xs-9 col-sm-6 col-md-3">
-            <a (click)="select(country.name, country.capital, country.region, country.population)">{{country.name}}</a>
+          <div class="col-xs-6">
+            <a (click)="select(country)">{{country.name}}</a>
+          </div>
+          <div class="col-xs-2 pull-right" *ngIf="userLoggedIn">
+            <a class="btn btn-primary btn-block" (click)="addToWishList(country)">
+              Wishlist
+            </a>
           </div>
         </div>
       </li>

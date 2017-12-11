@@ -8,6 +8,8 @@ UserModel.findUserByUsername = findUserByUsername;
 UserModel.updateUser = updateUser;
 UserModel.deleteUser = deleteUser;
 UserModel.findUsers = findUsers;
+UserModel.followUser = followUser;
+UserModel.addToWishList = addToWishList;
 
 module.exports = UserModel;
 
@@ -51,4 +53,11 @@ function followUser(currentId, otherId) {
       otherUser.followers.push(currentId);
       return otherUser.save();
     });
+}
+
+function addToWishList(country, userId) {
+  return UserModel.findById(userId).then(function (user) {
+    user.wishList.push(country);
+    return user.save;
+  });
 }

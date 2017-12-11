@@ -14,6 +14,7 @@ module.exports = function (app) {
   app.post('/api/loggedIn', loggedIn);
   app.post('/api/logout', logout);
   app.put('/api/users/:userId/follow', followUser);
+  app.put('/api/user/:userId/wishList', addToWishList);
 
   var passport = require('passport');
   var LocalStrategy = require('passport-local').Strategy;
@@ -105,7 +106,16 @@ module.exports = function (app) {
     userModel.followUser(currentUser, otherId)
       .then(function (user) {
         res.json(user);
-        return;
+      });
+  }
+
+  function addToWishList(req, res) {
+    var userId = req.query["userId"];
+    var country = req.body;
+
+    userModel.addToWishList(country, userId)
+      .then(function (country) {
+        res.json(country);
       });
   }
 

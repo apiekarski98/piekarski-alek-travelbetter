@@ -8,6 +8,7 @@ var UserSchema = mongoose.Schema({
   phone: String,
   following: [{type: mongoose.Schema.Types.ObjectId, ref: "UserModel"}],
   followers: [{type: mongoose.Schema.Types.ObjectId, ref: "UserModel"}],
+  wishList: [{type: mongoose.Schema.Types.ObjectId, ref: "UserModel"}],
   isAdmin: {type: Boolean, default: 'false'},
   dateCreated: Date
 }, {collection: 'user'});

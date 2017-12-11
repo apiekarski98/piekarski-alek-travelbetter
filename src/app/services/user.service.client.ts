@@ -23,7 +23,8 @@ export class UserService {
     'findUserByCredentials': this.findUserByCredentials,
     'updateUser': this.updateUser,
     'deleteUser': this.deleteUser,
-    'followUser': this.followUser
+    'followUser': this.followUser,
+    'addToWishList': this.addToWishList
   };
 
   register(username, password) {
@@ -113,6 +114,14 @@ export class UserService {
     return this.http.put(url, user)
       .map((response: Response) => {
         response.json()
+      });
+  }
+
+  addToWishList(country, userId) {
+    const url = environment.baseUrl + '/api/user' + userId + '/wishList';
+    return this.http.put(url, country)
+      .map((response: Response) => {
+        response.json();
       });
   }
 
