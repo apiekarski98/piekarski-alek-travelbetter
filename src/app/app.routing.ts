@@ -11,9 +11,10 @@ import {UserListComponent} from "./components/user/user-list/user-list/user-list
 import {UserEditComponent} from "./components/user/user-edit/user-edit/user-edit.component";
 import {AdminService} from "./services/admin.service.client";
 import {UserCreateComponent} from "./components/user/user-create/user-create/user-create.component";
+import {HomeComponent} from "./components/home/home.component";
 
 const APP_ROUTES: Routes = [
-  {path: '', component: SearchComponent},
+  {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent},
   {path: 'user/:userId/search', component: SearchComponent, canActivate: [AuthGuard]},
   {path: 'search/:countryName', component: SearchDetailsComponent},
