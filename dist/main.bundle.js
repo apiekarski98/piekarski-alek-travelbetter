@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a routerLink=\"/login\">Login</a>\n<a routerLink=\"/register\">Register</a>\n<a routerLink=\"/profile\">Profile</a>\n<router-outlet></router-outlet>\n"
+module.exports = "<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -184,6 +184,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_user_user_edit_user_edit_user_edit_component__ = __webpack_require__("../../../../../src/app/components/user/user-edit/user-edit/user-edit.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_admin_service_client__ = __webpack_require__("../../../../../src/app/services/admin.service.client.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_user_user_create_user_create_user_create_component__ = __webpack_require__("../../../../../src/app/components/user/user-create/user-create/user-create.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Routing; });
 
 
@@ -197,8 +198,9 @@ AppModule = __decorate([
 
 
 
+
 var APP_ROUTES = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_2__components_search_search_component__["a" /* SearchComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'search', component: __WEBPACK_IMPORTED_MODULE_2__components_search_search_component__["a" /* SearchComponent */] },
     { path: 'user/:userId/search', component: __WEBPACK_IMPORTED_MODULE_2__components_search_search_component__["a" /* SearchComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_7__services_auth_guard_service__["a" /* AuthGuard */]] },
     { path: 'search/:countryName', component: __WEBPACK_IMPORTED_MODULE_3__components_search_search_details_search_details_search_details_component__["a" /* SearchDetailsComponent */] },
@@ -226,7 +228,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".background {\n  background-color: #222222;\n  height: 2000px;\n}\n\n.center {\n  margin: auto;\n  margin-left: 40%;\n  width: auto;\n}\n\nh1 {\n  color: darkgoldenrod;\n  font-family: Copperplate;\n  font-size: 40px;\n}\n\na {\n  color: darkgoldenrod;\n  font-family: Copperplate;\n  font-size: 20px;\n}\n", ""]);
 
 // exports
 
@@ -239,7 +241,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\n  <h1>\n    Angular 4 MEAN stack app\n  </h1>\n\n\n  <h3>\n    App works\n  </h3>\n\n\n  <h4>\n    <a href=\"test\">Test MongoDB</a>\n  </h4>\n\n</div>\n\n"
+module.exports = "<div class=\"background\">\n  <div class=\"container center\">\n    <h1>Alek Piekarski</h1>\n    <div>\n      <img src=\"../../../Headshot.JPG\"\n           width=\"100\"\n           height=\"100\"\n           alt=\"Personal Photo\">\n    </div>\n    <div>\n      <a [routerLink]=\"['/search']\">Project Home Page</a>\n    </div>\n    <div>\n      <a href=\"https://github.com/apiekarski98/piekarski-alek-travelbetter/wiki\">Project Git Hub</a>\n    </div>\n    <div>\n      <a href=\"https://webdev-piekarski-alek.herokuapp.com/login\">Assignment Home Page</a>\n    </div>\n    <div>\n      <a href=\"https://github.com/apiekarski98/webdev-piekarski-alek/wiki\">Assignment Git Hub</a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
